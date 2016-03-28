@@ -27,9 +27,7 @@
 2.点触评星的实现
 ```
 // 点触评分的关键
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesEnded:touches withEvent:event];
-    
+- (void)updateWithTouches:(NSSet<UITouch *> *)touches {
     UITouch *touche = [touches anyObject];
     CGPoint touchPoint = [touche locationInView:self.blankStars];
     NSLog(@"%@", NSStringFromCGPoint(touchPoint));
@@ -47,7 +45,5 @@
             self.tf.text = [NSString stringWithFormat:@"%.2lf", touchX / self.blankStars.frame.size.width * 5];
         }];
     }
-    
-    [self.view endEditing:YES];
 }
 ```
