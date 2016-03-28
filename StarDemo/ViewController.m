@@ -94,10 +94,21 @@
     }];
 }
 
-// 点触评分的关键
+// 点触
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
-    
+    [self updateWithTouches:touches];
+    [self.view endEditing:YES];
+}
+
+// 移动
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
+    [self updateWithTouches:touches];
+    [self.view endEditing:YES];
+}
+
+- (void)updateWithTouches:(NSSet<UITouch *> *)touches {
     UITouch *touche = [touches anyObject];
     CGPoint touchPoint = [touche locationInView:self.blankStars];
     NSLog(@"%@", NSStringFromCGPoint(touchPoint));
@@ -115,8 +126,6 @@
             self.tf.text = [NSString stringWithFormat:@"%.2lf", touchX / self.blankStars.frame.size.width * 5];
         }];
     }
-    
-    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
