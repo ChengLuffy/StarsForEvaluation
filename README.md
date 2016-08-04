@@ -1,7 +1,7 @@
 # StarsForEvaluation
 先上效果图
 
-![gif.gif](http://upload-images.jianshu.io/upload_images/1251095-12c1c4ce0f141f15.gif?imageMogr2/auto-orient/strip)
+![gif.gif](https://github.com/ChengLuffy/StarsForEvaluation/blob/master/demo.gif)
 
 1.评星按钮的回调事件
 ```
